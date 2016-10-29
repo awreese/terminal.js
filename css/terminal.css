@@ -1,0 +1,79 @@
+/*
+The MIT License (MIT)
+
+Copyright (c) 2016 Andrew Reese, All rights reserved
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+*/
+
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:400,500);
+
+.terminal {
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.8) 0px 20px 70px;
+    overflow: hidden;
+    margin: 10px auto;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.terminal-header {
+    background: silver;
+    background: -webkit-linear-gradient(GhostWhite 0%, silver 50%, gray 100%); 
+    background: -o-linear-gradient(GhostWhite 0%, silver 50%, gray 100%);
+    background: -moz-linear-gradient(GhostWhite 0%, silver 50%, gray 100%);
+    background: linear-gradient(GhostWhite 0%, silver 50%, gray 100%);
+
+    color: black;
+    text-align: center;
+}
+
+.terminal-window {
+    padding: 20px;
+    font-family: "Ubuntu", sans-serif;
+}
+
+/* For type.js scripting */
+.typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+

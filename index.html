@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Terminal.js - Little Demo</title>
+    <!-- Get jQuery -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    
+    <!-- // <script src="js/jquery.js"></script> -->
+    <script src="js/p5.min.js" type="text/javascript"></script>
+    <script src="js/p5.sound.min.js" type="text/javascript"></script>
+    <script src="js/typed-custom.js" type="text/javascript"></script>
+    <script src="js/terminal.js" type="text/javascript"></script>
+
+    <script>
+
+    var commandScript = {
+
+        start: {
+            strings: ["This is a terminal emulator.", "It types courtesy of Matt Boldt's typing script.", "It plays sound using the p5 js libraries.", "Commands can be scripted...", "... or they can be individually called.", "Now for the real demo..."],
+            callback: function() {
+                executeCommand($("#terminal1"), commandScript.command1);
+            }
+        },
+
+        command1: {
+            strings: ["Type commands like this...", 'echo "hello there"'],
+            callback: function() {
+                displayResult($("#terminal1"), commandScript.command2);
+            }
+        },
+
+        command2: {
+            result: 'and display results like "hello there"',
+            callback: function() {
+                executeCommand($("#terminal1"), commandScript.command3);
+            }
+        },
+
+        command3: {
+            strings: [,,],
+            callback: function() {
+                executeCommand($("#terminal1"), commandScript.command4);
+            }
+        },
+
+        command4: {
+            strings: ["You can also clear the screen", "clear"],
+            callback: function() {
+                clearTerminal($("#terminal1"));
+                executeCommand($("#terminal1"), commandScript.command5);
+            }
+        },
+
+        command5: {
+            strings: ["Now you have a fresh clean terminal again."],
+            callback: function() {
+                executeCommand($("#terminal1"), commandScript.command6);
+            }
+        },
+
+        command6: {
+            strings: ["Thank you for checking out this demo."],
+            callback: function() {
+                executeCommand($("#terminal1"), commandScript.end);
+            }
+
+        },
+
+        end: {
+            strings: [""],
+            callback: foo
+        }
+
+    };
+
+    window.onload = function() {
+
+        executeCommand($("#terminal1"), commandScript.start);
+
+    };
+
+    function foo(){ console.log("Callback"); }
+    
+    </script>
+
+    <link href="css/terminal.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet"/>
+
+</head>
+<body>
+
+    <div class="terminal-wrap">
+        <h1 class="h1">Terminal.js</h1>
+
+        <div id="terminal1" class="terminal">
+            <div class="terminal-header">terminal</div>
+            <div class="terminal-window">
+                <!-- terminal is loaded from script :) -->
+            </div>
+        </div>
+
+        <div class="links">
+            <a href="http://www.mattboldt.com/demos/typed-js">View Matt's typing demo</a> | <a href="http://awreese.github.io/">View awreese.github.io</a><!--  | <a href="http://www.twitter.com/atmattb">Complain to Matt about how awful this is</a> -->
+        </div>
+    </div>
+
+</body>
+</html>
